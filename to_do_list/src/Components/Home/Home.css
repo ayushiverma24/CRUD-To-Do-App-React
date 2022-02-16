@@ -29,3 +29,9 @@
 .addIcon {
   margin-left: 3%;
 }
+.theList h1 {
+  border: 1px solid #cacad8;
+  padding: 9px;
+  width: 86%;
+  border-radius: 5px;
+}
