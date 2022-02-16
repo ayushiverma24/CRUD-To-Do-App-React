@@ -3,7 +3,7 @@ import "./Home.css";
 import TextField from "@mui/material/TextField";
 import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRounded";
 import Image3 from "../Images/Image3.svg";
-
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 export class Home extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +14,7 @@ export class Home extends Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleAddTask = this.handleAddTask.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   handleInput = (e) => {
     this.setState({
@@ -22,7 +23,6 @@ export class Home extends Component {
   };
   handleAddTask = (e) => {
     e.preventDefault();
-    console.log("I am clicked");
     this.setState({
       taskList: this.state.taskList.concat(this.state.task),
     });
@@ -30,9 +30,15 @@ export class Home extends Component {
       task: "",
     });
   };
+  handleDelete = (i) => {
+    const newList = this.state.taskList.filter((data, index) => {
+      return i !== index;
+    });
+    this.setState({
+      taskList: newList,
+    });
+  };
   render() {
-    console.log("task = ", this.state.task);
-    console.log("taskList = ", this.state.taskList);
     let data = this.state.taskList;
     return (
       <div className="thePage">
@@ -65,7 +71,12 @@ export class Home extends Component {
                   {data.map((myData, i) => {
                     return (
                       <div className="theList">
-                        <h1>{myData}</h1>
+                        <p>{myData}</p>
+                        <DeleteForeverIcon
+                          className="delIcon"
+                          fontSize="small"
+                          onClick={() => this.handleDelete(i)}
+                        />
                       </div>
                     );
                   })}

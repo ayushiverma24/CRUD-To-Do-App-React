@@ -29,9 +29,15 @@
 .addIcon {
   margin-left: 3%;
 }
-.theList h1 {
+.theList p {
   border: 1px solid #cacad8;
-  padding: 9px;
+  padding: 12px;
   width: 86%;
   border-radius: 5px;
+}
+.theList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
