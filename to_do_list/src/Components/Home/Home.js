@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRounded";
 import Image3 from "../Images/Image3.svg";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import EditIcon from "@mui/icons-material/Edit";
 
 export class Home extends Component {
   constructor(props) {
@@ -13,8 +12,6 @@ export class Home extends Component {
     this.state = {
       task: "",
       taskList: [],
-      flag: false,
-      address: 0,
       currentTask: {
         task: "",
         id: "",
@@ -67,13 +64,10 @@ export class Home extends Component {
     this.setState({
       taskList: tasklist,
     });
-    console.log("tasklist = ", tasklist);
-    console.log("updateed data = ", this.state.taskList);
   };
   render() {
     let data = this.state.taskList;
-    console.log("data = ", data);
-    console.log("this.state = ", this.state);
+
     return (
       <div className="thePage">
         <div className="myGlass">
@@ -103,10 +97,6 @@ export class Home extends Component {
               {this.state.taskList.length > 0 ? (
                 <div>
                   {data.map((myData, i) => {
-                    {
-                      console.log("myData = ", myData);
-                    }
-
                     return (
                       <div className="theList" key={myData.id}>
                         <TextField
