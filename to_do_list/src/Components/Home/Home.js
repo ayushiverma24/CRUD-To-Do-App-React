@@ -48,28 +48,6 @@ export class Home extends Component {
         },
       });
     }
-    // if (this.state.flag) {
-    //   this.state.taskList.map((data, key) => {
-    //     if (this.state.address === key) {
-    //       console.log("data inside = ", data);
-    //       console.log("inside this.state.task = ", this.state.task);
-    //       // this.setState({
-    //       //   taskList[key]: this.state.task
-    //       // })
-    //       return this.state.task;
-    //     }
-    //   });
-    // } else {
-    //   if()
-    //   this.setState({
-    //     taskList: this.state.taskList.concat(this.state.task),
-    //   });
-    //   this.setState({
-    //     task: "",
-    //   });
-    // }
-
-    // if()
   };
   handleDelete = (i) => {
     const newList = this.state.taskList.filter((data, index) => {
@@ -79,18 +57,19 @@ export class Home extends Component {
       taskList: newList,
     });
   };
-  handleUpdateTask = () => {
-    console.log("clicked");
+  handleUpdateTask = (e, id) => {
+    const tasklist = this.state.taskList;
+    tasklist.map((data, index) => {
+      if (id === data.id) {
+        data.task = e.target.value;
+      }
+    });
+    this.setState({
+      taskList: tasklist,
+    });
+    console.log("tasklist = ", tasklist);
+    console.log("updateed data = ", this.state.taskList);
   };
-  // handleEdit = (i) => {
-  //   console.log("slected = ", i);
-  //   var item = this.state.taskList[i];
-  //   this.setState({
-  //     task: item,
-  //     address: i,
-  //     flag: true,
-  //   });
-  // };
   render() {
     let data = this.state.taskList;
     console.log("data = ", data);
@@ -129,27 +108,15 @@ export class Home extends Component {
                     }
 
                     return (
-                      <div className="theList" key={i}>
+                      <div className="theList" key={myData.id}>
                         <TextField
                           variant="outlined"
                           fullWidth
                           required
                           className="listInput"
                           value={myData.task}
-                          onChange={this.handleUpdateTask}
+                          onChange={(e) => this.handleUpdateTask(e, myData.id)}
                         />
-                        {/* <input
-                          type="text"
-                          id={myData.id}
-                          value={myData.task}
-                        ></input> */}
-                        {/* <p>{myData.task}</p> */}
-                        {/* <EditIcon
-                          fontSize="small"
-                          onClick={() => {
-                            this.handleEdit(i);
-                          }}
-                        /> */}
                         <DeleteForeverIcon
                           className="delIcon"
                           fontSize="small"
