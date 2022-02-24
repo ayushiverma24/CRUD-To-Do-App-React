@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/CRUD-To-Do-App-React/static/css/main.952d02fd.css",
+    "main.js": "/CRUD-To-Do-App-React/static/js/main.8d4eed74.js",
+    "static/js/787.34d05ddd.chunk.js": "/CRUD-To-Do-App-React/static/js/787.34d05ddd.chunk.js",
+    "static/media/Image3.svg": "/CRUD-To-Do-App-React/static/media/Image3.df753c6019dbc7e72b6c9265d9c24f1c.svg",
+    "static/media/logo.svg": "/CRUD-To-Do-App-React/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/CRUD-To-Do-App-React/index.html",
+    "main.952d02fd.css.map": "/CRUD-To-Do-App-React/static/css/main.952d02fd.css.map",
+    "main.8d4eed74.js.map": "/CRUD-To-Do-App-React/static/js/main.8d4eed74.js.map",
+    "787.34d05ddd.chunk.js.map": "/CRUD-To-Do-App-React/static/js/787.34d05ddd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.952d02fd.css",
+    "static/js/main.8d4eed74.js"
+  ]
+}
